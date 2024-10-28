@@ -110,6 +110,7 @@ async def upload_file(file: UploadFile = File(...)):
         </div>
         <button onclick="tokenize('{file_location}')">Show Tokenization</button>
         <button onclick="augment()">Show Augmentation</button>
+        <button onclick="reset()">Reset</button>  <!-- Reset button -->
         <div id="tokenization-result"></div>
         <div id="augmentation-result"></div>
         
@@ -150,6 +151,10 @@ async def upload_file(file: UploadFile = File(...)):
                 }});
                 
                 document.getElementById('augmentation-result').innerHTML = augmentationResult;
+            }}
+
+            function reset() {{
+                window.location.href = '/';  // Navigate back to the upload page
             }}
         </script>
     </body>
